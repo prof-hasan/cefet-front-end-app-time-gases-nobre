@@ -1,5 +1,122 @@
-img {
-    width: 800px;
-    margin: 0 auto;
-    display: block;
+:root {
+    --cor-fundo-escuro: #4E2721; /* Marrom bem escuro, quase preto */
+    --cor-fundo-claro: #8B453A;  /* Marrom um pouco mais claro */
+    --cor-texto: #FFFFFF;
+}
+
+body {
+    font-family: 'Times New Roman', serif; /* Fonte com serifa para imitar o estilo */
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.titulo-jogo {
+    font-size: 3em;
+    color: var(--cor-fundo-escuro);
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.tabuleiro {
+    display: grid;
+    /* Define 6 colunas, sendo as 4 centrais para o texto/vazio e as bordas para as casas */
+    grid-template-columns: repeat(6, 80px); /* 80px de largura para cada casa */
+    grid-template-rows: repeat(6, 80px); /* 80px de altura para cada casa */
+    border: 4px solid var(--cor-fundo-escuro);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: var(--cor-fundo-claro);
+}
+
+.casa {
+    width: 80px;
+    height: 80px;
+    background-color: var(--cor-fundo-escuro);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Linhas divisórias sutis */
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 2px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    writing-mode: horizontal-tb; /* Padrão */
+}
+
+/* ---------------------------------------------------- */
+/* POSICIONAMENTO DAS CASAS NO GRID */
+/* ---------------------------------------------------- */
+
+/* Linha de baixo (da direita para a esquerda: casas 1 a 5) */
+#casa-1 { grid-area: 6 / 6 / 7 / 7; }
+#casa-2 { grid-area: 6 / 5 / 7 / 6; }
+#casa-3 { grid-area: 6 / 4 / 7 / 5; }
+#casa-4 { grid-area: 6 / 3 / 7 / 4; }
+#casa-5 { grid-area: 6 / 2 / 7 / 3; }
+
+/* Lateral esquerda (de baixo para cima: casas 6 a 9) */
+#casa-6 { grid-area: 5 / 2 / 6 / 3; }
+#casa-7 { grid-area: 4 / 2 / 5 / 3; }
+#casa-8 { grid-area: 3 / 2 / 4 / 3; }
+#casa-9 { grid-area: 2 / 2 / 3 / 3; }
+
+/* Linha de cima (da esquerda para a direita: casas 10 a 14) */
+#casa-10 { grid-area: 1 / 2 / 2 / 3; }
+#casa-11 { grid-area: 1 / 3 / 2 / 4; }
+#casa-12 { grid-area: 1 / 4 / 2 / 5; }
+#casa-13 { grid-area: 1 / 5 / 2 / 6; }
+#casa-14 { grid-area: 1 / 6 / 2 / 7; }
+
+/* Lateral direita (de cima para baixo: casas 15 a 20) */
+#casa-15 { grid-area: 2 / 6 / 3 / 7; }
+#casa-16 { grid-area: 3 / 6 / 4 / 7; }
+#casa-17 { grid-area: 4 / 6 / 5 / 7; }
+#casa-18 { grid-area: 5 / 6 / 6 / 7; }
+#casa-19 { grid-area: 6 / 6 / 7 / 7; } /* A casa 19 é a mesma que a 1 */
+#casa-20 { grid-area: 5 / 6 / 6 / 7; } /* A casa 20 é a mesma que a 18 */
+
+/* Casas vazias e texto central - Usando pseudo-elementos ou divs */
+.tabuleiro::before {
+    content: "BUSCA PELO GÁS NOBRE";
+    grid-area: 2 / 3 / 6 / 6; /* Ocupa as 4 colunas e 4 linhas centrais */
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-fundo-escuro);
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    padding: 10px;
+    letter-spacing: 3px;
+}
+
+/* Casas laterais que precisam ter texto girado (como na imagem original) */
+#casa-6, #casa-7, #casa-8, #casa-9,
+#casa-15, #casa-16, #casa-17, #casa-18,
+#casa-19, #casa-20 {
+    writing-mode: vertical-rl; /* Gira o texto 90 graus */
+    text-orientation: mixed;
+    transform: rotate(180deg); /* Opcional, para ajustar a orientação */
+}
+
+/* Estilos para ícones específicos */
+.casa-pergunta { font-size: 3em; }
+.casa-dinheiro { font-size: 3em; }
+.casa-trevo { font-size: 3em; color: green; }
+.casa-atomica { font-size: 3em; }
+.casa-martelo { font-size: 3em; }
+/* ...adicione mais estilos para os outros ícones... */
+
+.especial {
+    background-color: var(--cor-fundo-claro); /* Casas com fundo diferente */
+    color: var(--cor-fundo-escuro);
 }
