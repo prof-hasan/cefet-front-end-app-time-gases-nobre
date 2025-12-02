@@ -9,12 +9,12 @@ const jump = () => {
     }, 500);
 
 }
-
+//minuto 23:10
 const loop = setInterval(() => {
     const tuboPosition = tubo.offsetLeft;
-    const bonecoPosition = boneco.offsetBottom;
+    const bonecoPosition = +window.getComputedStyle(boneco).bottom.replace('')
 
-    console.log(bonecoPosition)
+    console.log(bonecoPosition);
    
     if (tuboPosition <= 120) {
         tubo.style.animation = 'none';
