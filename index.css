@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url("fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+header {
+  padding: 2%;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.50);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+h1{
+  margin-bottom: 1%;
+  font-size: 3.0rem;
+  font-weight: 800;
+  text-shadow: 0 0 12px #000;
+  color: white;
+  text-align: center;
+}
+
+.inicio p{
+  margin-bottom: 2%;
+  font-size: 150%;
+  font-weight: 800;
+  text-shadow: 0 0 12px #000;
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.inicio h1{
+  margin-bottom: 1%;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-shadow: 0 0 12px #000;
+  color: white;
+  text-align: center;
+  margin-top: 3%;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 1.5%;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  padding: 5px 12px;
+  border-radius: 12px;
+}
+
+header nav a:hover {
+  background: yellow;
+  color: #000;
+}
+
+.hero {
+  padding: 5%;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px #000;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1%;
+  animation: fadeIn 1.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards {
+  padding: 5%;
+  text-align: center;
+}
+
+.cards h2 {
+  font-size: 3.5rem;
+  margin-bottom: 4%;
+  color: white;
+  text-shadow: 0 0 12px #000;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+   background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 6px #000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  border: 2px solid yellow;
+  transition: 0.35s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.55);
+}
+
+.card img.foto {
+  width: 55%;
+  display: block;
+  margin: 0 auto 1rem auto;
+  filter: drop-shadow(0 0 8px #0004);
+}
+
+.card h3 {
+  color:black;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card p {
+  color: white;
+  font-size: 1rem;
+}
+
+.caixa-glass h1, h2, h3{
+  color: black;
+}
+
+.caixa-glass {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  color: white;
+  width: 75%;
+  margin: 45px auto;
+  text-shadow: 0 0 6px #000;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: glassFade 1.5s ease forwards;
+}
+
+.caixa-glass:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.35);
+}
+
+@keyframes glassFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  text-align: center;
+  padding: 1.5%;
+  margin-top: 2%;
+  border-top: 2px solid #fff3;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+}
+
+h2{
+  text-align: center;
+  font-size: 250%;
+}
+
+.container-caixas {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px;
+  flex-wrap: wrap; 
+}
+
+.container-caixas .caixa-glass {
+  width: 30%; 
+  min-width: 280px; 
+}
+
+.caixa-glass p{
+  font-size: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10%;
+  padding-top: 10%;
+}
+
+.hero {
+  text-align: center;
+  padding: 4%;
+  color: white;
+  text-shadow: 0 0 10px #000;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.container-curiosidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4%;
+}
+
+.curio-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 6px #000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  border: 2px solid yellow;
+  transition: 0.35s;
+}
+
+.curio-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 35px rgba(255,255,255,0.4);
+}
+
+.curio-card img {
+  width: 45%;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px #000);
+}
+
+.curio-card h3 {
+  font-size: 1.4rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.curio-card p {
+  font-size: 1rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 30px; 
+  flex-wrap: wrap; 
+}
+
+.criador {
+  padding: 20px;
+  width: 300px; 
+  border-radius: 10px;
+  text-align: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  color: white;
+  text-shadow: 0 0 6px #000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  border: 2px solid yellow;
+  transition: 0.35s;
+}
+
+.criador:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.foto-criador {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+  font-size: 14px;
+}
