@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="style.css">
+  <title>Pulando com a Turma</title>
+</head>
+<body>
 
-        <link rel="stylesheet" href="style.css">
+  <h1>Pulando com a Turma</h1>
 
-        <title>Pula Pula</title>
-    </head>
-    <body>
+  <!-- TELA DE ESCOLHA DO PERSONAGEM -->
+  <div class="selecao" id="selecao">
+    <h2>Escolha seu personagem</h2>
+    <div class="personagens">
+      <!-- 🔁 SUBSTITUA OS SRC ABAIXO PELOS SEUS GIFS -->
+      <img src="cascão.gif" onclick="startGame(1)">
+<img src="cebolinha.gif" onclick="startGame(2)">
+<img src="monica.gif" onclick="startGame(3)">
 
-        <div class="game-board">
-            
-        <img src="Tubo mario.png" class="tubo">
-        <img src="cascão.gif" class="boneco">
+    </div>
+  </div>
 
-        </div>
+  <!-- CAIXA DO JOGO -->
+  <div class="game-box" id="gameBox">
+    <div class="score" id="score">Pontos: 0</div>
 
-        <script src="script.js"></script>
-    </body>
+    <!-- 🔁 PERSONAGEM (IMAGEM DEFINIDA NO JS) -->
+    <img class="player" id="player" src="cascão.gif">
+
+    <!-- 🔁 SUBSTITUA PELO SEU CANO -->
+    <img class="pipe" id="pipe" src="Tubo mario.png">
+
+    <div class="ground"></div>
+
+    <div class="game-over" id="gameOver">
+      <h2>Game Over</h2>
+      <p>Você bateu no cano</p>
+      <button onclick="location.reload()">Jogar novamente</button>
+    </div>
+  </div>
+
+</body>
+
+  <script src="script.js"></script>
 </html>
